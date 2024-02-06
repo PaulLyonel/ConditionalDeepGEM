@@ -21,7 +21,7 @@ created via the surrogate forward models. The lower dimensional photo mask examp
 
 ## Links
 
-[1] Mixed Noise and Posterior Estimation with Conditional DeepGEM, Hagemann et al
+[1] Mixed Noise and Posterior Estimation with Conditional DeepGEM, Hagemann et al, arXiv:2402.02964
 
 [2] DeepGEM: Generalized Expectation-Maximization for Blind Inversion, Gao et al, NeurIPS 2021
 
@@ -33,3 +33,9 @@ created via the surrogate forward models. The lower dimensional photo mask examp
 
 [6] Zenodo [link](https://zenodo.org/records/10580011?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhODczMTI[…]Wy_BlNwAypimG3ogbySLuIiCMvye4__sW6wKv4jSbj46saixcrQuZPugke0w5aw)
 ## Citation 
+@article{hagemann2024mixed,
+      title={Mixed Noise and Posterior Estimation with Conditional DeepGEM}, 
+      author={Paul Hagemann and Johannes Hertrich and Maren Casfor and Sebastian Heidenreich and Gabriele Steidl},
+      year={2024},
+      journal={arXiv preprint arXiv:2402.02964}
+}

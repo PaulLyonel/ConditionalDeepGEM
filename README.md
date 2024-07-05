@@ -4,10 +4,8 @@
 
 Code accompanying the paper "Mixed Noise and Posterior Estimation with Conditional DeepGEM". Here we learn the noise parameters $(a,b)$ of a Bayesian inverse problem $Y = f(X) + \xi,$ 
 where $\xi \sim  \mathcal{N}\big(0, a^2 + b^2 \text{diag} (f(x)^2) \big)$ is a mixture of additive and multiplicative Gaussian noise. This approach allows to incorporate information from several measurements within one model 
-and therefore for more accurate reconstruction of the noise parameters, when more than one measurement is available, see the image below. Here the distance to the true a and b decreases as more information is given. 
-<p align="center">
-<img src =https://github.com/PaulLyonel/ConditionalDeepGEM/assets/16451311/0837d9f5-45f1-4423-b2fb-07ddd2b86452>
-</p>
+and therefore for more accurate reconstruction of the noise parameters, when more than one measurement is available. Here the distance to the true a and b decreases as more information is given. 
+
 We build upon the deepGEM framework [2], and combine it with conditional normalizing flows [3]
 to solve scatterometric inverse problems [4,5]. 
 If you use the forward models from the low-dimensional photo mask please cite the corresponding papers [4,5]. if you use the forward model from the oxide layer please cite the 
@@ -15,9 +13,7 @@ zenodo page [6] and our paper [1].
 
 ## Code 
 
-This code contains 4 jupyter notebooks. The ones on the main branch are for the more high dimensional oxide layer example and use the forward KL (EM_scatter) and the reverse KL (EM_deepgem). Both of these use synthetic measurements
-created via the surrogate forward models. The lower dimensional photo mask examples are to be found in this subfolder. 
-
+The code is split up into reverse and forward KL for the high-dimensional version. For the lower dimensional scatterometry example, we also included baselines, where we chose a and b on a grid with comparable run time.
 
 ## Links
 
@@ -33,9 +29,18 @@ created via the surrogate forward models. The lower dimensional photo mask examp
 
 [6] Zenodo [link](https://zenodo.org/records/10580011?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhODczMTI[…]Wy_BlNwAypimG3ogbySLuIiCMvye4__sW6wKv4jSbj46saixcrQuZPugke0w5aw)
 ## Citation 
-@article{hagemann2024mixed,
-      title={Mixed Noise and Posterior Estimation with Conditional DeepGEM}, 
-      author={Paul Hagemann and Johannes Hertrich and Maren Casfor and Sebastian Heidenreich and Gabriele Steidl},
-      year={2024},
-      journal={arXiv preprint arXiv:2402.02964}
+@article{Hagemann_2024,
+doi = {10.1088/2632-2153/ad5926},
+url = {https://dx.doi.org/10.1088/2632-2153/ad5926},
+year = {2024},
+month = {jul},
+publisher = {IOP Publishing},
+volume = {5},
+number = {3},
+pages = {035001},
+author = {Paul Hagemann and Johannes Hertrich and Maren Casfor and Sebastian Heidenreich and Gabriele Steidl},
+title = {Mixed noise and posterior estimation with conditional deepGEM},
+journal = {Machine Learning: Science and Technology},
+abstract = {We develop an algorithm for jointly estimating the posterior and the noise parameters in Bayesian inverse problems, which is motivated by indirect measurements and applications from nanometrology with a mixed noise model. We propose to solve the problem by an expectation maximization (EM) algorithm. Based on the current noise parameters, we learn in the E-step a conditional normalizing flow that approximates the posterior. In the M-step, we propose to find the noise parameter updates again by an EM algorithm, which has analytical formulas. We compare the training of the conditional normalizing flow with the forward and reverse Kullback–Leibler divergence, and show that our model is able to incorporate information from many measurements, unlike previous approaches.}
 }
+
